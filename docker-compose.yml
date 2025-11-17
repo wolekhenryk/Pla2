@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: pla_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: pla_db
+      POSTGRES_USER: hw
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "25432:5432"
+    volumes:
+      - pla_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hw -d pla_db || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pla_pg_data:
+    driver: local
