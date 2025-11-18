@@ -7,7 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+      <PackageReference Include="FluentResults" />
       <PackageReference Include="MediatR" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Pla2.Infrastructure\Pla2.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
